@@ -1,14 +1,14 @@
 10
 
 dir
-26
+39
 svn://localhost/spr1ngsvn/TheEye/DB4o-Server/src
 svn://localhost/spr1ngsvn/TheEye
 
 
 
-2010-07-01T03:21:24.424375Z
-26
+2010-07-02T05:55:21.236218Z
+39
 stream
 
 
@@ -28,28 +28,4 @@ stream
 
 db4oserver
 dir
-
-log4j.xml
-file
-32
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-deleted
 

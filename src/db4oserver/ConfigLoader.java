@@ -4,7 +4,9 @@
  */
 package db4oserver;
 
+import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Properties;
 import java.util.logging.Logger;
@@ -12,7 +14,7 @@ import java.util.logging.Logger;
 /**
  *
  * @author stream
- * @version $Id: ConfigLoader.java 32 2010-07-01 05:46:58Z spr1ng $
+ * @version $Id: ConfigLoader.java 39 2010-07-02 05:55:21Z stream $
  */
 public class ConfigLoader {
     private static final Logger LOG = Logger.getAnonymousLogger();
@@ -60,6 +62,18 @@ public class ConfigLoader {
         init();
     }
 
+    public void save() {
+        try {
+            prop.put("HOST", host);
+            prop.put("PORT", Integer.toString(port));
+            prop.put("USER", user);
+            prop.put("PASS", pass);
+            prop.store(new FileWriter(new File("conf.properties")), "#");
+        } catch (IOException ex) {
+           ex.printStackTrace();
+        }
+    }
+
     private static Object get(String key) {
         return prop.get(key);
     }
@@ -80,7 +94,7 @@ public class ConfigLoader {
         return host;
     }
 
-    public  void setHost(String host) {
+    public void setHost(String host) {
         ConfigLoader.host = host;
     }
 

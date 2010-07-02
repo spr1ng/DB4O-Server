@@ -1,14 +1,14 @@
 10
 
 dir
-26
+39
 svn://localhost/spr1ngsvn/TheEye/DB4o-Server/src/db4oserver
 svn://localhost/spr1ngsvn/TheEye
 
 
 
-2010-07-01T03:21:24.424375Z
-26
+2010-07-02T05:55:21.236218Z
+39
 stream
 
 
@@ -26,33 +26,9 @@ stream
 
 8763ed6d-9318-4032-b958-c511fcb819a9
 
-ServerInfo.java
-file
-27
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-deleted
-
 StartServer.java
 file
-34
+
 
 
 
@@ -86,7 +62,7 @@ has-props
 
 AbstractDBManager.java
 file
-33
+
 
 
 
@@ -120,7 +96,7 @@ spr1ng
 
 StopServer.java
 file
-27
+
 
 
 
@@ -154,15 +130,15 @@ has-props
 
 ConfigLoader.java
 file
-32
 
 
 
-2010-07-01T05:46:58.430573Z
-9ca155dd4a177256ce2d625c6a52b232
-2010-07-01T05:46:58.335244Z
-32
-spr1ng
+
+2010-07-02T06:00:56.171066Z
+ff83cbd7f18f3feb89b287b988143d39
+2010-07-02T05:55:21.236218Z
+39
+stream
 has-props
 
 
@@ -184,5 +160,5 @@ has-props
 
 
 
-2776
+3183
 
