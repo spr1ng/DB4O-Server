@@ -1,23 +1,23 @@
+package eye.server;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package db4oserver;
+
 
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Properties;
-import java.util.logging.Logger;
 
 /**
  *
  * @author stream
- * @version $Id$
+ * @version $Id: ConfigLoader.java 44 2010-07-06 02:16:36Z spr1ng $
  */
 public class ConfigLoader {
-    private static final Logger LOG = Logger.getAnonymousLogger();
 
     private static String file;
     private static String host;
@@ -57,7 +57,7 @@ public class ConfigLoader {
         try {
             prop.load(new FileReader(fName));
         } catch (IOException ex) {
-            LOG.info("Config not found. Loading default one.");
+            System.out.println("Config not found. Loading default one.");
         }
         init();
     }

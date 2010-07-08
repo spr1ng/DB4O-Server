@@ -1,14 +1,14 @@
 10
 
 dir
-39
+55
 svn://localhost/spr1ngsvn/TheEye/DB4o-Server/dist
 svn://localhost/spr1ngsvn/TheEye
 
 
 
-2010-06-28T07:22:12.383775Z
-7
+2010-07-06T02:16:36.734999Z
+44
 spr1ng
 
 
@@ -62,38 +62,4 @@ has-props
 
 
 5437
-
-README.TXT
-file
-
-
-
-delete
-2010-07-01T03:41:33.463071Z
-2776d1ffa6287ff0acc871f962d67947
-2010-06-28T07:22:12.383775Z
-7
-spr1ng
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1449
 

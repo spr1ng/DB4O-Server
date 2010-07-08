@@ -1,15 +1,15 @@
 10
 
 dir
-39
+55
 svn://localhost/spr1ngsvn/TheEye/DB4o-Server
 svn://localhost/spr1ngsvn/TheEye
 
 
 
-2010-07-02T05:55:21.236218Z
-39
-stream
+2010-07-06T02:16:36.734999Z
+44
+spr1ng
 has-props
 has-prop-mods
 
@@ -28,6 +28,40 @@ dir_conflicts.prej
 
 test
 dir
+
+dir_conflicts.prej
+file
+
+
+
+delete
+2010-07-02T06:00:56.179065Z
+8f40dbb6fe71f2579c7795eb8d42bedc
+2010-07-06T02:16:36.734999Z
+44
+spr1ng
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+115
 
 dist
 dir
@@ -74,6 +108,40 @@ spr1ng
 
 libs
 dir
+
+README
+file
+
+
+
+
+2010-07-02T05:00:17.078566Z
+d41d8cd98f00b204e9800998ecf8427e
+2010-07-06T02:16:36.734999Z
+44
+spr1ng
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0
 
 build.xml
 file

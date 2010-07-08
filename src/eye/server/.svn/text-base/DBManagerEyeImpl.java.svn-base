@@ -1,0 +1,129 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package eye;
+
+import com.db4o.ObjectContainer;
+import com.db4o.ObjectSet;
+import com.db4o.cs.Db4oClientServer;
+import db4oserver.AbstractDBManager;
+import db4oserver.ConfigLoader;
+import eye.models.Image;
+import eye.models.Place;
+import eye.models.RemoteSource;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+//import org.apache.log4j.Logger;
+
+/**
+ *
+ * @author spr1ng
+ * @version $Id$
+ */
+public class DBManagerEyeImpl extends AbstractDBManager{
+    
+    private static ConfigLoader conf = ConfigLoader.getInstance();
+    //public static final Logger LOG = Logger.getLogger(DBManagerEyeImpl.class);
+
+    public ObjectContainer getContainer() {
+        return Db4oClientServer.openClient(Db4oClientServer
+                .newClientConfiguration(), conf.getHost(), conf.getPort(), conf.getUser(), conf.getPass());
+    }
+
+    public void watchDb() {
+        ObjectContainer db = getContainer();
+        try {
+            watchDb(db);
+        } finally {
+            db.close();
+        }
+    }
+
+    public void watchDb(ObjectContainer db) {
+        ObjectSet objects = db.query().execute();
+
+        int places = 0, images = 0;
+        for (Object object : objects) {
+            if (object instanceof Place) {
+                places++;
+                Place p = (Place) object;
+                LOG.info("Place url: " + p.getUrl());
+                if (p.getDate() != null) {
+                    LOG.info("Place data: " + p.getDate());
+                }
+            }
+        }
+        LOG.info("-------> Total places: " + places);
+        for (Object object : objects) {
+            if (object instanceof Image) {
+                images++;
+                Image i = (Image) object;
+                LOG.info("Image: " + i.getUrl());
+                if (i.getPoints() != null) {
+                    LOG.info("!!!!!!!!!!!!!!!!!!!!!!!Points: " + i.getPoints());
+                }
+            }
+        }
+        LOG.info("-------> Total images: " + images);
+
+        LOG.info("Total objects: " + objects.size());
+    }
+
+    /**
+     * Сохраняет все объекты списка в базу. Возвращает количество новых
+     * сохраненных объектов
+     * @param objects
+     */
+    public int store(List objects) {
+        if (objects == null) {
+            LOG.severe("A try to store a null list of objects");
+            return 0;
+        }
+        ObjectContainer db = getContainer();
+        int qty = 0;
+        try {
+            for (Object o : objects) {
+                if (o != null) {
+                    //Если такого объекта еще нет в базе
+                    if (!isItemStored(o)) {
+                        db.store(o);
+                        qty++;
+                    } //else LOG.error("A try to store a duplicate object"); //DELME:
+                } else LOG.severe("A try to store a null object");
+            }
+        } finally { db.close(); }
+
+        return qty;
+    }
+
+    /** Сохраняет удаленный источник в БД */
+    public void store(RemoteSource rs) {
+        try {
+            new URL(rs.getUrl());
+        } catch (MalformedURLException ex) {
+            LOG.severe("Can't reach target: " + rs.getUrl());
+        }
+        List<RemoteSource> sources = new ArrayList<RemoteSource>(1);
+        sources.add(rs);
+        store(sources);
+    }
+
+    /** Retrieves all images from DB */
+    public List<Image> getAllImages(){//PENDING: нельзя здесь закрывать. понять почему!!
+        ObjectContainer db = getContainer();
+        try {
+            return db.query(Image.class);
+        }catch(Exception e){
+            e.printStackTrace();
+            return null;
+        } /*finally {
+            db.close();
+        }*/
+        
+    }
+
+}

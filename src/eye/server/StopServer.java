@@ -1,4 +1,4 @@
-package db4oserver;
+package eye.server;
 
 import com.db4o.*;
 import com.db4o.cs.*;
@@ -10,7 +10,7 @@ import com.db4o.messaging.*;
  * This is done by opening a client connection to the server and by sending a
  * StopServer object as a message. {@link StartServer} will react in it's www.db4o.com
  * processMessage method.
- * @version $Id$
+ * @version $Id: StopServer.java 57 2010-07-08 03:35:18Z spr1ng $
  */
 public class StopServer {
     private static ConfigLoader conf = ConfigLoader.getInstance();

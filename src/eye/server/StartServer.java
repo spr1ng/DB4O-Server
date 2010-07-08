@@ -1,4 +1,4 @@
-package db4oserver;
+package eye.server;
 
 import com.db4o.*;
 import com.db4o.cs.*;
@@ -18,13 +18,13 @@ import java.util.Date;
  * Note that all user classes need to be present on the server side and that all
  * possible Db4o.configure() calls to alter the db4o configuration need to be
  * executed on the client and on the server.
- * @version $Id$
+ * @version $Id: StartServer.java 57 2010-07-08 03:35:18Z spr1ng $
  */
 public class StartServer implements MessageRecipient {
 
     /** setting the value to true denotes that the server should be closed */
     private boolean stop = false;
-    private ConfigLoader conf = ConfigLoader.getInstance();
+    private static ConfigLoader conf = ConfigLoader.getInstance();
     
     /**
      * starts a db4o server using the configuration from {

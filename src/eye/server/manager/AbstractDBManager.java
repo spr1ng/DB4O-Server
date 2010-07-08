@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-package db4oserver;
+package eye.server.manager;
 
 import com.db4o.ObjectContainer;
 import java.util.List;
