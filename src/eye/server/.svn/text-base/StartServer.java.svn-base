@@ -4,6 +4,7 @@ import com.db4o.*;
 import com.db4o.cs.*;
 import com.db4o.cs.config.*;
 import com.db4o.messaging.*;
+import eye.server.manager.ConfigLoader;
 import java.util.Date;
 
 /**

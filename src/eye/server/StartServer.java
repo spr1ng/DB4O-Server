@@ -4,6 +4,7 @@ import com.db4o.*;
 import com.db4o.cs.*;
 import com.db4o.cs.config.*;
 import com.db4o.messaging.*;
+import eye.server.manager.ConfigLoader;
 import java.util.Date;
 
 /**
@@ -18,7 +19,7 @@ import java.util.Date;
  * Note that all user classes need to be present on the server side and that all
  * possible Db4o.configure() calls to alter the db4o configuration need to be
  * executed on the client and on the server.
- * @version $Id: StartServer.java 57 2010-07-08 03:35:18Z spr1ng $
+ * @version $Id: StartServer.java 75 2010-07-08 05:30:46Z stream $
  */
 public class StartServer implements MessageRecipient {
 

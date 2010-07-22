@@ -1,15 +1,15 @@
 10
 
 dir
-55
+123
 svn://localhost/spr1ngsvn/TheEye/DB4o-Server/src
 svn://localhost/spr1ngsvn/TheEye
 
 
 
-2010-07-06T02:16:36.734999Z
-44
-spr1ng
+2010-07-08T05:30:46.848577Z
+75
+stream
 
 
 
@@ -25,30 +25,6 @@ spr1ng
 
 
 8763ed6d-9318-4032-b958-c511fcb819a9
-
-db4oserver
-dir
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-deleted
 
 eye
 dir

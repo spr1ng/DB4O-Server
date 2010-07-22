@@ -3,6 +3,7 @@ package eye.server;
 import com.db4o.*;
 import com.db4o.cs.*;
 import com.db4o.messaging.*;
+import eye.server.manager.ConfigLoader;
 
 /**
  * stops the db4o Server started with {@link StartServer}. <br>

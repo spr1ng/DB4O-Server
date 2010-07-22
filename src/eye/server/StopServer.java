@@ -3,6 +3,7 @@ package eye.server;
 import com.db4o.*;
 import com.db4o.cs.*;
 import com.db4o.messaging.*;
+import eye.server.manager.ConfigLoader;
 
 /**
  * stops the db4o Server started with {@link StartServer}. <br>
@@ -10,7 +11,7 @@ import com.db4o.messaging.*;
  * This is done by opening a client connection to the server and by sending a
  * StopServer object as a message. {@link StartServer} will react in it's www.db4o.com
  * processMessage method.
- * @version $Id: StopServer.java 57 2010-07-08 03:35:18Z spr1ng $
+ * @version $Id: StopServer.java 75 2010-07-08 05:30:46Z stream $
  */
 public class StopServer {
     private static ConfigLoader conf = ConfigLoader.getInstance();
